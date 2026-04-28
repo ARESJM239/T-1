@@ -14,13 +14,17 @@ import java.util.List;
 public class GestorAtenciones {
     private List<Atencion> listaAtenciones;
 
-    public GestorAtenciones() { listaAtenciones = new ArrayList<>(); }
-
-    public void registrarAtencion(Atencion atencion){
-        listaAtenciones.add(atencion);
+    public GestorAtenciones() { 
+        listaAtenciones = new ArrayList<>(); 
     }
 
-    public List<Atencion> getListaAtenciones() { return listaAtenciones; }
+    public void registrarAtencion(Atencion atencion) { 
+        listaAtenciones.add(atencion); 
+    }
+
+    public List<Atencion> getListaAtenciones() {
+        return listaAtenciones; 
+    }
 
     public void listarAtenciones() {
         if (listaAtenciones.isEmpty()) {

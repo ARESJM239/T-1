@@ -23,8 +23,13 @@ public class ServicioVeterinario {
         this.costo = costo;
     }
 
-    public String getNombre() { return nombre; }
-    public double getCosto() { return costo; }
+    public String getNombre() { 
+        return nombre; 
+    }
+    
+    public double getCosto() { 
+        return costo; 
+    }
 
     public void setCosto(double nuevoCosto) {
         if (nuevoCosto <= 0) {
@@ -33,3 +38,4 @@ public class ServicioVeterinario {
         this.costo = nuevoCosto;
     }
 }
+

@@ -35,17 +35,17 @@ public class SistemaVeterinaria {
             int opcion = sc.nextInt(); sc.nextLine();
 
             switch(opcion) {
-                case 1: { // Crear atención
+                case 1: { 
                     System.out.print("Nombre del cliente: ");
                     String cliente = sc.nextLine();
                     System.out.print("Nombre de la mascota: ");
                     String mascota = sc.nextLine();
                     Atencion atencion = new Atencion(cliente, mascota);
                     gestor.registrarAtencion(atencion);
-                    System.out.println("Atencion creada exitosamente. ID de la atención: " + atencion.getId());
+                    System.out.println("Atencion creada exitosamente. ID de la atencion: " + atencion.getId());
                 }
 
-                case 2: { // Agregar servicio
+                case 2: { 
                     if (gestor.getListaAtenciones().isEmpty()) {
                         System.out.println("No hay atenciones registradas.");
                         break;
@@ -75,7 +75,7 @@ public class SistemaVeterinaria {
                         try {
                             ServicioVeterinario servicio = new ServicioVeterinario(nombreServicio, costo);
                             atencion.agregarDetalle(new DetalleAtencion(servicio));
-                            System.out.println("Servicio agregado a la atencion ID " + id);
+                            System.out.println("Servicio agregado a la atención ID " + id);
                         } catch (IllegalArgumentException e) {
                             System.out.println(e.getMessage());
                         }
@@ -86,7 +86,7 @@ public class SistemaVeterinaria {
 
                 case 3: gestor.listarAtenciones();
 
-                case 4: { // Actualizar costo
+                case 4: { 
                     if (gestor.getListaAtenciones().isEmpty()) {
                         System.out.println("No hay atenciones registradas.");
                         break;
@@ -113,14 +113,18 @@ public class SistemaVeterinaria {
                         String nombreServicio = sc.nextLine();
                         System.out.print("Nuevo costo: ");
                         double nuevoCosto = sc.nextDouble(); sc.nextLine();
-                        atencion.actualizarCostoServicio(nombreServicio, nuevoCosto);
-                        System.out.println("Costo actualizado para la atención ID " + id);
+                        try {
+                            atencion.actualizarCostoServicio(nombreServicio, nuevoCosto);
+                            System.out.println("Costo actualizado para la atención ID " + id);
+                        } catch (IllegalArgumentException e) {
+                            System.out.println("Error: " + e.getMessage());
+                        }
                     } else {
                         System.out.println("Atencion no encontrada.");
                     }
                 }
 
-                case 5: { // Eliminar servicio
+                case 5: { 
                     if (gestor.getListaAtenciones().isEmpty()) {
                         System.out.println("No hay atenciones registradas.");
                         break;

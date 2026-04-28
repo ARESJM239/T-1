@@ -15,6 +15,11 @@ public class DetalleAtencion {
         this.servicio = servicio;
     }
 
-    public double calcularCosto() { return servicio.getCosto(); }
-    public ServicioVeterinario getServicio() { return servicio; }
+    public double calcularCosto() { 
+        return servicio.getCosto(); 
+    }
+    
+    public ServicioVeterinario getServicio() { 
+        return servicio; 
+    }
 }

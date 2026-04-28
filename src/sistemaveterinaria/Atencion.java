@@ -25,11 +25,21 @@ public class Atencion {
         this.detalles = new ArrayList<>();
     }
 
-    public int getId() { return id; }
-    public String getCliente() { return cliente; }
-    public String getMascota() { return mascota; }
+    public int getId() { 
+        return id; 
+    }
+    
+    public String getCliente() { 
+        return cliente; 
+    }
+    
+    public String getMascota() { 
+        return mascota; 
+    }
 
-    public void agregarDetalle(DetalleAtencion detalle) { detalles.add(detalle); }
+    public void agregarDetalle(DetalleAtencion detalle) { 
+        detalles.add(detalle); 
+    }
 
     public void eliminarDetalle(String nombreServicio) {
         boolean eliminado = detalles.removeIf(d -> d.getServicio().getNombre().equalsIgnoreCase(nombreServicio));
@@ -37,7 +47,7 @@ public class Atencion {
     }
 
     public double calcularTotal() {
-        if (detalles.isEmpty()) throw new IllegalStateException("No se puede calcular el total de una atencion vacia.");
+        if (detalles.isEmpty()) throw new IllegalStateException("No se puede calcular el total de una atención vacia.");
         double total = 0;
         for (DetalleAtencion d : detalles) total += d.calcularCosto();
         return total;
@@ -54,7 +64,9 @@ public class Atencion {
         if (!encontrado) System.out.println("Servicio no encontrado.");
     }
 
-    public int cantidadServicios() { return detalles.size(); }
+    public int cantidadServicios() { 
+        return detalles.size(); 
+    }
 
     @Override
     public String toString() {
