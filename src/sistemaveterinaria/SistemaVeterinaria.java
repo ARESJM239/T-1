@@ -43,6 +43,7 @@ public class SistemaVeterinaria {
                     Atencion atencion = new Atencion(cliente, mascota);
                     gestor.registrarAtencion(atencion);
                     System.out.println("Atencion creada exitosamente. ID de la atencion: " + atencion.getId());
+                    break;
                 }
 
                 case 2: { 
@@ -82,9 +83,12 @@ public class SistemaVeterinaria {
                     } else {
                         System.out.println("Atencion no encontrada.");
                     }
+                    break;
                 }
 
-                case 3: gestor.listarAtenciones();
+                case 3:
+                    gestor.listarAtenciones();
+                    break;
 
                 case 4: { 
                     if (gestor.getListaAtenciones().isEmpty()) {
@@ -122,6 +126,7 @@ public class SistemaVeterinaria {
                     } else {
                         System.out.println("Atencion no encontrada.");
                     }
+                    break;
                 }
 
                 case 5: { 
@@ -154,11 +159,16 @@ public class SistemaVeterinaria {
                     } else {
                         System.out.println("Atencion no encontrada.");
                     }
+                    break;
                 }
 
-                case 6: gestor.mostrarAtencionesMenoresATresServicios();
+                case 6:
+                    gestor.mostrarAtencionesMenoresATresServicios();
+                    break;
 
-                case 7: salir = true;
+                case 7:
+                    salir = true;
+                    break;
 
                 default: System.out.println("Opcion invalida.");
             }
